@@ -1,4 +1,4 @@
-## OpenVPN Access Server Deployment with MFA, Auto-login & Secure Configuration
+## OpenVPN Server Deployment with MFA, Auto-login & Secure Config
 
 This guide walks through a fully automated and secured OpenVPN Access Server setup using AWS EC2 (Ubuntu), including:
 
@@ -157,7 +157,6 @@ nano create-openvpn-user.sh
 Paste this:
 
 ```bash
-#!/bin/bash
 
 USERNAME="$1"
 PASSWORD="$2"
@@ -207,7 +206,7 @@ Run the script:
 ### Elastic IP + DNS
 
 * Assign an Elastic IP in AWS.
-* Set an A record in your DNS provider pointing to that IP (e.g., `vpn.domain.com`).
+* Set an A record in the DNS provider pointing to that IP (e.g., `vpn.domain.com`).
 
 
 ### Install fail2ban
@@ -232,14 +231,14 @@ sudo ufw enable
 
 ## Done
 
-You now have:
+Now the:
 
 * OpenVPN Access Server up & running
-* Admin UI secured
-* MFA enabled per user
-* Custom users with auto-login profiles
-* Hardened firewall and fail2ban
-* Optional DNS routing
+* Admin UI is secured
+* MFA is enabled per user
+* Custom users can be created with auto-login profiles
+* Firewall is hardened and fail2ban
+* DNS is routed(optional) 
 
 
 ## License
