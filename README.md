@@ -10,7 +10,6 @@ This guide walks through a fully automated and secured OpenVPN Access Server set
 * User creation automation script
 * (Optional) Elastic IP + DNS routing
 
----
 
 ## Prerequisites
 
@@ -77,9 +76,10 @@ https://<ec2-public-ip>:943/admin
 Login using:
 
 * **Username:** `openvpn`
-* **Password:** set during setup
+* **Password:** set during setup  
 
----
+![Screenshot](Photos/Screenshot%202025-06-21%20212355.png)  
+
 
 ### 4. Create & Configure a User
 
@@ -94,7 +94,8 @@ User Management → Add User
   * `Allow Auto-login`
   * `Default (Local)` authentication
 
----
+![Screenshot](Photos/Screenshot%202025-06-21%20202309.png)
+
 
 ### 5. Enable MFA (TOTP)
 
@@ -112,9 +113,10 @@ https://<ec2-public-ip>:943/
  QR code to scan using:
 
 * Google Authenticator
-* Microsoft Authenticator
+* Microsoft Authenticator  
 
----
+![Screenshot](Photos/Screenshot%202025-06-21%20204621.png)  
+
 
 ### 6. Fix Public IP in the .ovpn Profile
 
@@ -127,7 +129,10 @@ https://<ec2-public-ip>:943/
    ```
    https://<ec2-public-ip>:943/
    ```
-2. Open the file and edit:
+![Screenshot](Photos/Screenshot%202025-06-21%20204621.png)
+
+
+3. Open the file and edit:
 
    ```
    remote 172.31.x.x 1194
@@ -139,7 +144,6 @@ https://<ec2-public-ip>:943/
    remote <ec2-public-ip> 443
    ```
 
----
 
 ### 7. Automate User Creation & MFA Setup
 
@@ -194,7 +198,6 @@ Run the script:
 ./create-openvpn-user.sh elijames mysecurepassword
 ```
 
----
 
 ## Security Hardening
 
@@ -203,7 +206,6 @@ Run the script:
 * Assign an Elastic IP in AWS.
 * Set an A record in your DNS provider pointing to that IP (e.g., `vpn.domain.com`).
 
----
 
 ### Install fail2ban
 
@@ -212,7 +214,6 @@ sudo apt install fail2ban -y
 sudo systemctl enable fail2ban --now
 ```
 
----
 
 ### Configure UFW (Firewall)
 
@@ -225,7 +226,6 @@ sudo ufw allow 1194/udp
 sudo ufw enable
 ```
 
----
 
 ## Done
 
@@ -238,7 +238,6 @@ You now have:
 * Hardened firewall and fail2ban
 * Optional DNS routing
 
----
 
 ## License
 
