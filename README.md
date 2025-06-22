@@ -14,6 +14,7 @@ This guide walks through a fully automated and secured OpenVPN Access Server set
 ## Prerequisites
 
 * AWS account
+* Git Bash
 * EC2 Ubuntu 22.04+ instance
 * Security group allowing:
 
@@ -129,7 +130,9 @@ https://<ec2-public-ip>:943/
    ```
    https://<ec2-public-ip>:943/
    ```
-![Screenshot](Photos/Screenshot%202025-06-21%20204621.png)
+
+![Screenshot](Photos/Screenshot%202025-06-21%20213003.png)
+
 
 
 3. Open the file and edit:
