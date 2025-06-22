@@ -23,8 +23,9 @@ This guide walks through a fully automated and secured OpenVPN Access Server set
   * TCP `443` from IP (TLS VPN)
   * UDP `1194` from IP (Default OpenVPN)
 * Domain (optional, for persistent DNS)
+  
+![Screenshot](Photos/Screenshot%202025-06-21%20211132.png)
 
----
 
 ## Step-by-Step Installation
 
@@ -39,13 +40,15 @@ Set the security group rules as follows:
 | 443  | TCP      | IP     | TLS VPN                |
 | 1194 | UDP      | IP     | OpenVPN default tunnel |
 
----
+![Screenshot](Photos/Screenshot%202025-06-21%20211920.png)
+
 
 ### 2. Connect to EC2 & Install OpenVPN
 
 ```bash
-ssh -i "y-ey.pem" ubuntu@ec2-public-ip
+ssh -i "key.pem" ubuntu@ec2-public-ip
 ```
+
 
 Add OpenVPN's repo and install OpenVPN:
 
@@ -60,7 +63,8 @@ sudo apt update
 sudo apt install -y openvpn-as
 ```
 
----
+![Screenshot](Photos/Screenshot%202025-06-21%20200828.png)  
+
 
 ### 3. Access the Admin Web UI
 
@@ -73,7 +77,7 @@ https://<ec2-public-ip>:943/admin
 Login using:
 
 * **Username:** `openvpn`
-* **Password:** ow set during setup
+* **Password:** set during setup
 
 ---
 
