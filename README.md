@@ -1,4 +1,4 @@
-## OpenVPN Server Deployment with MFA, Auto-login & Secure Config
+### OpenVPN Server Deployment with MFA, Auto-login & Secure Config
 
 This guide walks through a fully automated and secured OpenVPN Access Server setup using AWS EC2 (Ubuntu), including:
 
